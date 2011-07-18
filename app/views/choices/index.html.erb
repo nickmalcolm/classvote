@@ -19,9 +19,33 @@
           </td>
         <td class="title"><h1><%= choice.title %></h1></td>
         <td class="details">
-          <%= link_to 'Details', choice_path(choice) %>
+          <%= link_to 'Details', "#choice_#{choice.id}", :class => "toggle_details" %>
         </td>
       </tr>
     </table>
+    
+    <div class="details">
+      <p>
+        <b>Description:</b>
+      </p>
+      <p>
+        <%= choice.description.html_safe %>
+      </p>
+
+      <p>
+        <b>Voters:</b>
+        <ul>
+          <% choice.votes.all.each do |v| %>
+            <li><%= "#{v.mask} at #{v.created_at.strftime("%l:%M%p %d %b")}" %></li>
+          <% end %>
+        </ul>
+      </p>
+    </div>
   <% end %>
+<% end %>
+
+<% content_for(:jquery) do %>
+  $(".toggle_details").click(function(event){
+    $(this).parents("div").children("div").slideToggle();
+  })
 <% end %>

@@ -128,3 +128,7 @@ td.details{
   width: 10%;
 }
 
+div.details{
+  display: none;
+}
+
