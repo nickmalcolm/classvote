@@ -1,29 +1,25 @@
-<%= form_for(@choice) do |f| %>
-  <% if @choice.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@choice.errors.count, "error") %> prohibited this choice from being saved:</h2>
+<% if @choice.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@choice.errors.count, "error") %> prohibited this choice from being saved:</h2>
 
-      <ul>
-      <% @choice.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    <ul>
+    <% @choice.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
   </div>
 <% end %>
+
+<%= semantic_form_for(@choice) do |form| %>
+  <%= form.inputs do %>
+    <%= form.input :title %>
+    <%= form.input :description, :as => :text %>
+  <% end %>
+  <%= form.inputs do %>
+    <%= form.commit_button %>
+  <% end %>
+<% end %>
+
+<p>
+  You can use the following html tags: <%= valid_tags.to_sentence %>
+</p>

@@ -7,12 +7,7 @@
 
 <p>
   <b>Description:</b>
-  <%= @choice.description %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= @choice.url %>
+  <%= super_sanitize @choice.description %>
 </p>
 
 <p>
