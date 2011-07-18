@@ -24,4 +24,9 @@ class VoteTest < ActiveSupport::TestCase
     assert Vote.new(:student_id_number => 12345).invalid?
   end
   
+  test "student id masked for votes" do
+    v = Vote.create!(:student_id_number => 300170288)
+    assert_equal "xxxxxx288", v.to_s
+  end
+  
 end

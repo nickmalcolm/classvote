@@ -4,6 +4,17 @@ class Vote < ActiveRecord::Base
   
   validate :three_vote_limit
   
+  #Turns 1234567890 into "xxxxxxx890"
+  def mask
+    sid = student_id_number.to_s
+    
+    len = sid.length - 3
+    exes = ""
+    len.times {exes << "x"}
+      
+    sid.gsub /\A.{#{len}}/, exes
+  end
+  
   private
   def three_vote_limit
     count = Vote.where("student_id_number = ?", self.student_id_number).count
