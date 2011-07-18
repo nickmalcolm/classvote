@@ -6,6 +6,8 @@ Classvote::Application.routes.draw do
   
   resource :session, :only => [:new, :create]
   
+  resources :votes, :only => [:create]
+  
   match "logout", :to => "sessions#destroy"
 
   # The priority is based upon order of creation:
