@@ -2,6 +2,11 @@ html{
   color: #444;
 }
 
+html, body{
+  margin: 0px;
+  padding: 0px;
+}
+
 /* Shared styles */
 
 .drop-shadow {
@@ -56,6 +61,37 @@ html{
             transform:rotate(3deg);
 }
 
+
+
+.header{
+  display:block;
+  width: 100%;
+  background: #c9de96;
+  background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c9de96), color-stop(44%,#8ab66b), color-stop(100%,#398235));
+  background: -webkit-linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%);
+  background: -o-linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%);
+  background: -ms-linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9de96', endColorstr='#398235',GradientType=0 );
+  background: linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%);
+}
+
+.header h1{
+  margin: 0px;
+  padding: 15px 10px;
+}
+
+.header h1 a {
+  text-shadow: 1px 1px 1px #444;
+  filter: dropshadow(color=#444, offx=1, offy=1);
+  color: #fff;
+  text-decoration: none;
+}
+
+section{
+  display: block;
+  margin: 10px;
+}
 
 .votes{
   text-align: center;

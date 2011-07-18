@@ -8,16 +8,26 @@
 </head>
 <body>
 
-<% if flash[:error] %>
-  <p style="font-weight: bold; color:#A00"><%= flash[:error] %></p>
-<% end %>
-<% if flash[:notice] %>
-  <p style="font-weight: bold; color:#0A0"><%= flash[:notice] %></p>
-<% end %>
+<div class="header">
+  <h1><%= link_to "CHI 2011 Session Chooser", root_url %></h1>
+</div>
 
-<%= render "sessions/login" %>
+<section>
+  <% if flash[:error] %>
+    <p style="font-weight: bold; color:#A00"><%= flash[:error] %></p>
+  <% end %>
+  <% if flash[:notice] %>
+    <p style="font-weight: bold; color:#0A0"><%= flash[:notice] %></p>
+  <% end %>
+</section>
 
-<%= yield %>
+<section>
+  <%= render "sessions/login" %> 
+</section>
+
+<section>
+  <%= yield %>
+</section>
 
 </body>
 </html>
