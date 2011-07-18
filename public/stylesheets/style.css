@@ -2,10 +2,23 @@ html{
   color: #444;
 }
 
+
+
+.votes{
+  text-align: center;
+}
+
+.votes h2{
+  margin: 0px;
+}
+
+.votes a {
+  text-decoration: none;
+}
+
 .vote_button {
   color: #aaa;
 }
 .vote_button a {
   color: #68DA09;
-  text-decoration: none;
 }
