@@ -124,12 +124,20 @@ section{
   margin: 10px;
 }
 
+section p{
+  margin: 0px;
+}
+
 .votes{
   text-align: center;
 }
 
 .votes h2{
   margin: 0px;
+}
+
+h2.vote_count{
+  margin-bottom: 5px;
 }
 
 .votes a {

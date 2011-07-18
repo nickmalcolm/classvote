@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
   def cookie_session(student_id_number)
     cookies[:student_id_number] = student_id_number
     session[:student_id_number] = student_id_number
+    @current_student = student_id_number
   end
   
 end

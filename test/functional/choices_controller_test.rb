@@ -23,7 +23,9 @@ class ChoicesControllerTest < ActionController::TestCase
   end
   
   test "index should show some votes" do
-    Vote.create!(:student_id_number => 12345, :choice_id => @choice.id)
+    v = Vote.new(:choice_id => @choice.id)
+    v.student_id_number = 300170288
+    v.save!
     
     get :index
     assert_select "#choice_#{@choice.id} h2", "1"

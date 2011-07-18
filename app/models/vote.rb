@@ -7,6 +7,8 @@ class Vote < ActiveRecord::Base
   
   validate :three_vote_limit
   
+  attr_accessible :choice_id
+  
   #Turns 1234567890 into "xxxxxxx890"
   def mask
     sid = student_id_number.to_s

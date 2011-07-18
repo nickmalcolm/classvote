@@ -1,7 +1,10 @@
 class ChoicesController < ApplicationController
   
+  before_filter :require_student, :only => :vote
+  
   def vote
-    v = Vote.new(:student_id_number => @current_student, :choice_id => params[:id])
+    v = Vote.new(:choice_id => params[:id])
+    v.student_id_number = @current_student.to_i
     
     if v.valid?
       v.save!
@@ -91,6 +94,14 @@ class ChoicesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(choices_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  private
+  def require_student
+    unless @current_student.to_i > 0
+      flash[:error] = "Log in first bro"
+      redirect_to root_path
     end
   end
 end
