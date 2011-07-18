@@ -37,6 +37,20 @@
   <section class="grid12">
     <%= yield %>
   </section>
+  
+  <section class="grid12">
+    <p>
+      <strong><%= link_to "About this app", "#about", :id=>"about_toggle" %></strong>
+    </p>
+    <div id="about" style="display:none">
+      <p>Created by Nick Malcolm</p>
+      <p>w: <%= link_to "itsnickmalcolm.com", "http://itsnickmalcolm.com" %></p>
+      <p>t: <%= link_to "@nickmalcolm", "http://twitter.com/nickmalcolm" %></p>
+      <p><%= link_to "View Source", "http://github.com/nickmalcolm/classvote" %></p>
+      <p>This was more fun than reddit...</p>
+    </div>
+  </section>
+    
 
 </div>
 
@@ -44,6 +58,10 @@
 $(document).ready(
   function(){
     <%= content_for(:jquery) %>
+    
+    $("#about_toggle").click(function(){
+      $("#about").slideToggle();
+    })
   });
 </script>
 
