@@ -1,5 +1,7 @@
 <%= link_to 'Add a new CHI2011 Session', new_choice_path %>
 
+<%= link_to 'Expand All Details', "#", :id => "expand_all", :style=>"float:right"%>
+
 <% @choices.each do |choice| %>
   <%= div_for choice, :class => "drop-shadow lifted" do %>
     <table>
@@ -47,5 +49,8 @@
 <% content_for(:jquery) do %>
   $(".toggle_details").click(function(event){
     $(this).parents("div").children("div").slideToggle();
+  })
+  $("#expand_all").click(function(){
+    $("div.details").slideToggle();
   })
 <% end %>
