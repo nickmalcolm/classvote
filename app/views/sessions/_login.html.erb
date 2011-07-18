@@ -1,0 +1,8 @@
+<%= semantic_form_for(Session.new, :url=>session_path) do |session| %>
+  <%= session.inputs do %>
+    <%= session.input :student_id_number, :input_html => { :autofocus => true } %>
+  <% end %>
+  <%= session.buttons do %>
+    <%= session.commit_button :label=>"Log In" %>
+  <% end %>
+<% end %>

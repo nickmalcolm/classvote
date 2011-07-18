@@ -1,10 +1,13 @@
 class SessionsController < ApplicationController
   
   def new
+    unless session[:student_id_number].nil?
+      redirect_to root_url
+    end
   end
   
   def create
-    cookie_session params[:student_id_number]
+    cookie_session params[:session][:student_id_number]
     redirect_to root_url
   end
   

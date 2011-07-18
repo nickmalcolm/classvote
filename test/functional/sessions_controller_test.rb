@@ -9,7 +9,7 @@ class SessionsControllerTest < ActionController::TestCase
   end
   
   test "can post student id to create session" do
-    post :create, :student_id_number => 300170288
+    post :create, :session => {:student_id_number => 300170288}
     assert_redirected_to root_url
     assert_not_nil session[:student_id_number]
   end
