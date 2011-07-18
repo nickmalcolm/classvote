@@ -15,6 +15,15 @@
   <%= @choice.url %>
 </p>
 
+<p>
+  <b>Voters:</b>
+  <ul>
+    <% @choice.votes.all.each do |v| %>
+      <li><%= "#{v.mask} at #{v.created_at.strftime("%l:%M%p %d %b")}" %></li>
+    <% end %>
+  </ul>
+</p>
+
 
 <%= link_to 'Edit', edit_choice_path(@choice) %> |
 <%= link_to 'Back', choices_path %>

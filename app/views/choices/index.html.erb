@@ -24,8 +24,7 @@
         Log in above to vote
       <% end %>
     </td>
-    <td><%= link_to 'Edit', edit_choice_path(choice) %></td>
-    <td><%= link_to 'Destroy', choice, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', choice_path(choice) %></td>
   <% end %>
 <% end %>
 </table>
