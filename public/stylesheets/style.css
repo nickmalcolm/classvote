@@ -11,8 +11,8 @@ html, body{
 
 .drop-shadow {
     position:relative;
-    width:95%;    
-    padding:1em; 
+    width:95%;   
+    padding: 5px 12px;
     margin: 2em 10px 2em; 
     background:#fff;
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -169,5 +169,13 @@ td.details{
 
 div.details{
   display: none;
+}
+
+.choice h1{
+  font-size: 140%;
+}
+
+.choice h2{
+  font-size: 120%;
 }
 
