@@ -15,7 +15,7 @@ class ChoicesController < ApplicationController
   # GET /choices
   # GET /choices.xml
   def index
-    @choices = Choice.all
+    @choices = Choice.order("votes_count DESC")
 
     respond_to do |format|
       format.html # index.html.erb

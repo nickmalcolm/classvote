@@ -12,20 +12,18 @@
                 <%= link_to raw('&#x25B2;'), vote_choice_url(choice), :id => "vote_#{choice.id}", :title => "Vote for #{choice.title}" %>
               </h2>
               <h2 class="vote_count">
-                <%= link_to choice.votes.count, vote_choice_url(choice), :title => "Vote for #{choice.title}" %>
+                <%= link_to choice.votes_count, vote_choice_url(choice), :title => "Vote for #{choice.title}" %>
               </h2>
             <% else %>
               &#x25B2;
-              <h2 class="vote_count"><%= choice.votes.count %></h2>
+              <h2 class="vote_count"><%= choice.votes_count %></h2>
             <% end %>
           </td>
-        <td><h1><%= choice.title %></h1></td>
+        <td class="title"><h1><%= choice.title %></h1></td>
+        <td class="details">
+          <%= link_to 'Details', choice_path(choice) %>
+        </td>
       </tr>
     </table>
-    <p><%= choice.description %></p>
-    <p><%= choice.url %></p>
-    <p>
-      <%= link_to 'Details', choice_path(choice) %>
-    </p>
   <% end %>
 <% end %>

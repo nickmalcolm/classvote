@@ -1,6 +1,6 @@
 class Vote < ActiveRecord::Base
   
-  belongs_to :choice
+  belongs_to :choice, :counter_cache => true
   
   validates_presence_of :student_id_number
   validates_presence_of :choice_id
