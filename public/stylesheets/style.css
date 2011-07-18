@@ -1,0 +1,11 @@
+html{
+  color: #444;
+}
+
+.vote_button {
+  color: #aaa;
+}
+.vote_button a {
+  color: #68DA09;
+  text-decoration: none;
+}

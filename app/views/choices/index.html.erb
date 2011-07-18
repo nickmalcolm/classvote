@@ -1,34 +1,32 @@
 <h1>Listing choices</h1>
 
-<table>
-  <tr>
-    <th>Votes</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @choices.each do |choice| %>
-  <%= content_tag_for :tr, choice do %>
-    <td><h2><%= choice.votes.count %></h2></td>
-    <td><%= choice.title %></td>
-    <td><%= choice.description %></td>
-    <td><%= choice.url %></td>
-    <td>
+  <%= div_for choice do %>
+    <table>
+      <tr>
+        <td>
+          <h2 class="vote_button">
+            <% if @current_student %>
+              <%= link_to raw('&#x25B2;'), vote_choice_url(choice), :id => "vote_#{choice.id}" %>
+            <% else %>
+              &#x25B2;
+            <% end %>
+          </h2>
+        </td>
+        <td><h2 class="vote_count"><%= choice.votes.count %></h2></td>
+        <td><h2><%= choice.title %></h2></td>
+      </tr>
+    </table>
+    <p><%= choice.description %></p>
+    <p><%= choice.url %></p>
+    <p>
       <% if @current_student %>
         <%= link_to 'Vote', vote_choice_url(choice), :id => "vote_#{choice.id}" %>
       <% else %>
         Log in above to vote
-      <% end %>
-    </td>
-    <td><%= link_to 'Show', choice_path(choice) %></td>
+      <% end %> | <%= link_to 'Details', choice_path(choice) %></p>
   <% end %>
 <% end %>
-</table>
-
 <br />
 
 <%= link_to 'New Choice', new_choice_path %>
