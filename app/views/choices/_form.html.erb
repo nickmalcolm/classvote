@@ -1,15 +1,3 @@
-<% if @choice.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@choice.errors.count, "error") %> prohibited this choice from being saved:</h2>
-
-    <ul>
-    <% @choice.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <%= semantic_form_for(@choice) do |form| %>
   <%= form.inputs do %>
     <%= form.input :title %>

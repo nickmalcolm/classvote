@@ -1,5 +1,17 @@
 <h1>Editing <%= @choice.title %></h1>
 
+<% if @choice.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@choice.errors.count, "error") %> prohibited this choice from being saved:</h2>
+
+    <ul>
+    <% @choice.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= render 'form' %>
 
 <%= link_to 'Show', @choice %> |
