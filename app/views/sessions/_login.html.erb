@@ -1,9 +1,9 @@
 <% unless @current_student %>
   <%= semantic_form_for(Session.new, :url=>session_path) do |session| %>
-    <%= session.inputs do %>
-      <%= session.input :student_id_number, :input_html => { :autofocus => true } %>
+    <%= session.inputs :style=>"width: 80%;float:left", :class => "login" do %>
+      <%= session.input :student_id_number, :input_html => { :autofocus => true }, :required => false, :label => "Student ID" %>
     <% end %>
-    <%= session.buttons do %>
+    <%= session.inputs :style=>"width: 20%;float:right" do %>
       <%= session.commit_button :label=>"Log In" %>
     <% end %>
   <% end %>

@@ -11,7 +11,7 @@ html, body{
 
 .drop-shadow {
     position:relative;
-    width:80%;    
+    width:95%;    
     padding:1em; 
     margin: 2em 10px 2em; 
     background:#fff;
@@ -81,12 +81,43 @@ html, body{
   padding: 15px 10px;
 }
 
-.header h1 a {
+.header .title a {
+  font-size: 26px;
+  font-weight: 800;
   text-shadow: 1px 1px 1px #444;
   filter: dropshadow(color=#444, offx=1, offy=1);
   color: #fff;
   text-decoration: none;
+  line-height: 32px;
 }
+
+.header .login{
+  padding: 10px 0px;
+  text-align: right;
+  color: #fff;
+}
+
+.header .login a {
+  color: #444;
+}
+
+.login #session_student_id_number_input label{
+  width: 20%;
+}
+
+.login #session_student_id_number_input input{
+  width: 75%;
+}
+
+.login fieldset{
+  padding: 0px !important;
+}
+
+.login li{
+  margin-bottom: 0px !important;
+  padding-bottom:0px !important;
+}
+
 
 section{
   display: block;
