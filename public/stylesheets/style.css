@@ -75,3 +75,20 @@ html{
 .vote_button a {
   color: #68DA09;
 }
+
+table {
+  width: 100%;
+}
+
+td.votes{
+  width: 5%; 
+}
+
+td.title{
+  width: 85%;
+}
+
+td.details{
+  width: 10%;
+}
+
