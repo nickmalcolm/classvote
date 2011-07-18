@@ -1,7 +1,7 @@
 <%= semantic_form_for(@choice) do |form| %>
   <%= form.inputs do %>
-    <%= form.input :title %>
-    <%= form.input :description, :as => :text %>
+    <%= form.input :title, :as => :string %>
+    <%= form.input :description, :as => :text, :label => "Papers" %>
   <% end %>
   <%= form.inputs do %>
     <%= form.commit_button %>
