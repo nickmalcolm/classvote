@@ -8,5 +8,5 @@
     <% end %>
   <% end %>
 <% else %>
-  Logged in as <%= @current_student %>
+  Logged in as <%= @current_student %> | <%= link_to "Log Out", logout_path %>
 <% end %>
