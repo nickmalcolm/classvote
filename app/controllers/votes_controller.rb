@@ -1,7 +1,7 @@
 class VotesController < ApplicationController
   
   def create
-    v = Vote.new(:student_id_number => current_student)
+    v = Vote.new(:student_id_number => current_student, :choice_id => params[:vote][:choice_id])
     
     if v.valid?
       v.save!
