@@ -1,4 +1,14 @@
 class ChoicesController < ApplicationController
+  
+  def vote
+    v = Vote.new(:student_id_number => @current_student, :choice_id => params[:id])
+    
+    if v.valid?
+      v.save!
+    end
+    redirect_to root_url
+  end
+  
   # GET /choices
   # GET /choices.xml
   def index

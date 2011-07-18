@@ -2,7 +2,11 @@ Classvote::Application.routes.draw do
   
   root :to => "choices#index"
   
-  resources :choices, :except => [:destroy]
+  resources :choices, :except => [:destroy] do
+    member do
+      get :vote
+    end
+  end
   
   resource :session, :only => [:new, :create]
   
