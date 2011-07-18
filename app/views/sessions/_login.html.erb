@@ -8,5 +8,5 @@
     <% end %>
   <% end %>
 <% else %>
-  Logged in as <%= @current_student %> | <%= link_to "Log Out", logout_path %>
+  Logged in as <%= @current_student %> | <%= (pluralize votes_left, "vote")+" left" %> | <%= link_to "Log Out", logout_path %>
 <% end %>
