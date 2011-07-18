@@ -1,3 +1,7 @@
 form.formtastic fieldset {
   overflow: hidden;
 }
+
+form.formtastic fieldset > ol > li {
+    overflow: hidden;
+}
