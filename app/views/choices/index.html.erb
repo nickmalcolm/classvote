@@ -15,7 +15,13 @@
     <td><%= choice.title %></td>
     <td><%= choice.description %></td>
     <td><%= choice.url %></td>
-    <td><%= link_to 'Show', choice %></td>
+    <td>
+      <% if @current_student %>
+        <%= link_to 'Vote', choice, :id => "vote_#{choice.id}" %>
+      <% else %>
+        Log in above to vote
+      <% end %>
+    </td>
     <td><%= link_to 'Edit', edit_choice_path(choice) %></td>
     <td><%= link_to 'Destroy', choice, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

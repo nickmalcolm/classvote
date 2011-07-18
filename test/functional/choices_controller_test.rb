@@ -10,6 +10,17 @@ class ChoicesControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:choices)
   end
+  
+  test "should have vote button when logged in" do
+    session[:student_id_number] = 1234
+    get :index
+    assert_select "#vote_#{@choice.id}"
+  end
+  
+  test "shouldn't have vote button when not logged in" do
+    get :index
+    assert_select "#vote_#{@choice.id}", 0
+  end
 
   test "should get new" do
     get :new
@@ -39,11 +50,4 @@ class ChoicesControllerTest < ActionController::TestCase
     assert_redirected_to choice_path(assigns(:choice))
   end
 
-  test "should destroy choice" do
-    assert_difference('Choice.count', -1) do
-      delete :destroy, :id => @choice.to_param
-    end
-
-    assert_redirected_to choices_path
-  end
 end
