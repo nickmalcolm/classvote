@@ -10,6 +10,7 @@ class SessionsControllerTest < ActionController::TestCase
   end
   
   test "can't see form when logged in" do
+    login
     get :new
     assert_select "form", 0
   end
