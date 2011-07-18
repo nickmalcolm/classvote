@@ -5,6 +5,9 @@ class ChoicesController < ApplicationController
     
     if v.valid?
       v.save!
+      flash[:notice] = "Thanks for the vote"
+    else
+      flash[:error] = "You can't vote anymore"
     end
     redirect_to root_url
   end
