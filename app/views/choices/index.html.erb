@@ -1,14 +1,19 @@
 <h1>CHI2011 Sessions</h1>
 
+<%= link_to 'Add new CHI2011 Session', new_choice_path %>
+
 <% @choices.each do |choice| %>
-  <%= div_for choice do %>
+  <%= div_for choice, :class => "drop-shadow lifted" do %>
     <table>
       <tr>
         <td class="votes">
-          <h2 class="vote_button">
             <% if can_vote_on choice %>
-              <%= link_to raw('&#x25B2;'), vote_choice_url(choice), :id => "vote_#{choice.id}", :title => "Vote for #{choice.title}" %>
-              <h2 class="vote_count"><%= link_to choice.votes.count, vote_choice_url(choice), :title => "Vote for #{choice.title}" %></h2>
+              <h2 class="vote_button">
+                <%= link_to raw('&#x25B2;'), vote_choice_url(choice), :id => "vote_#{choice.id}", :title => "Vote for #{choice.title}" %>
+              </h2>
+              <h2 class="vote_count">
+                <%= link_to choice.votes.count, vote_choice_url(choice), :title => "Vote for #{choice.title}" %>
+              </h2>
             <% else %>
               &#x25B2;
               <h2 class="vote_count"><%= choice.votes.count %></h2>
@@ -24,6 +29,3 @@
     </p>
   <% end %>
 <% end %>
-<br />
-
-<%= link_to 'New Choice', new_choice_path %>
