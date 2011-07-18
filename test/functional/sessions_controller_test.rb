@@ -5,7 +5,13 @@ class SessionsControllerTest < ActionController::TestCase
   test "can get new" do
     get :new
     assert_response :success
+    assert_select "form", 1
     assert_nil session[:student_id_number]
+  end
+  
+  test "can't see form when logged in" do
+    get :new
+    assert_select "form", 0
   end
   
   test "can post student id to create session" do

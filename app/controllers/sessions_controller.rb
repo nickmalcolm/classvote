@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
   
   def new
-    unless session[:student_id_number].nil?
-      redirect_to root_url
-    end
   end
   
   def create
