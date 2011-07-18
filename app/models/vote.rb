@@ -1,6 +1,9 @@
 class Vote < ActiveRecord::Base
   
+  belongs_to :choice
+  
   validates_presence_of :student_id_number
+  validates_presence_of :choice_id
   
   validate :three_vote_limit
   
